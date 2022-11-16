@@ -1,0 +1,59 @@
+<!-- ============================================================== -->
+<!-- row -->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Editar Empresa</mat-card-title>
+            </mat-card-content>
+            <mat-tab-group class="demo-tab-group">
+                <mat-tab label="Datos">
+                    <div class="demo-tab-content">
+                        <div fxLayout="row wrap">
+                            <h6 style="color: primary">Información básica</h6>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Nombre de la empresa</mat-label>
+                                    <input matInput type="text">
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Correo electrónico</mat-label>
+                                    <input matInput type="text">
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Teléfono</mat-label>
+                                    <input matInput type="number">
+                                </mat-form-field>
+                            </div>
+
+
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <h5>Foto de la empresa</h5>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <input class="form-control b-b" placeholder="Foto" type="file">
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <button mat-raised-button [routerLink]="['../empresa']" color="primary">Editar
+                                    Empresa</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card>
+    </div>
+</div>

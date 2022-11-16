@@ -1,0 +1,64 @@
+<h2 class="font-medium" mat-dialog-title><strong>{{action}}</strong></h2>
+<mat-dialog-content class="pb-3" *ngIf="action != 'Delete'; else elseTemplate">
+    <form #userForm="ngForm">
+        <div class="d-flex align-items-center m-b-15">
+            <a class="pointer" style="color: #101111;">
+                Importar productos desde excel <br>
+                <img src="assets/images/excel-icon.png" style="width: 3%;">
+            </a>
+        </div>
+        <div class="d-flex align-items-center m-b-15">
+            <img class="mat-card-avatar" [src]='local_data.imagePath'>
+            <button mat-raised-button color="primary" class="m-l-15 input-file-button">
+                <input type="file" (change)="selectFile($event)" #fileInput>
+            </button>
+        </div>
+
+        <div fxLayout="row wrap" class="align-items-center">
+            <div fxFlex="100" fxFlex.gt-md="50">
+                <div class="m-r-15 m-l-15">
+                    <mat-form-field>
+                        <input type="text" matInput required id="producto" name="producto"
+                            [(ngModel)]="local_data.producto" placeholder="Producto">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxFlex="100" fxFlex.gt-md="50">
+                <div class="m-r-15 m-l-15">
+                    <mat-form-field>
+                        <input type="number" matInput required id="cantidad" name="cantidad"
+                            [(ngModel)]="local_data.cantidad" placeholder="Cantidad">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxFlex="100" fxFlex.gt-md="50">
+                <div class="m-r-15 m-l-15">
+                    <mat-form-field>
+                        <input type="number" matInput required id="precio_c" name="precio_c"
+                            [(ngModel)]="local_data.precio_c" placeholder="Precio Compra">
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div fxFlex="100" fxFlex.gt-md="50">
+                <div class="m-r-15 m-l-15">
+                    <mat-form-field>
+                        <input type="number" matInput required id="precio_v" name="precio_v"
+                            [(ngModel)]="local_data.precio_v" placeholder="Precio venta">
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </div>
+        <button mat-button (click)="doAction()" mat-flat-button color="primary"
+            [disabled]="!userForm.valid">{{action}}</button>
+        <button mat-button (click)="closeDialog()">Cancelar</button>
+    </form>
+</mat-dialog-content>
+<ng-template #elseTemplate>
+    <p>¿Seguro de eliminar <b>{{local_data.producto}}</b> ?</p>
+    <div mat-dialog-actions align="end" class="pt-3">
+        <button mat-button (click)="doAction()" mat-flat-button color="warn">{{action}}</button>
+        <button mat-button (click)="closeDialog()">Cancelar</button>
+    </div>
+</ng-template>

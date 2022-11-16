@@ -1,0 +1,24 @@
+
+$deep-app-primary: mat-palette($mat-deep, 500);
+$deep-app-accent: mat-palette($mat-deep, A200, A100, A400);
+$deep-app-warn: mat-palette($mat-pink);
+// Create the theme object (a Sass map containing all of the palettes).
+$deep-app-theme: mat-light-theme($deep-app-primary, $deep-app-accent, $deep-app-warn);
+$themecolor:#4287A8;
+$themecolor-alt: #4287A8;
+$white:#fff;
+#snav {
+    .mat-nav-list .mat-list-item { 
+        .mat-list-item-content {
+            &:hover {
+                > a {
+                    color: $themecolor;
+                }
+            }
+        }
+        &.selected > .mat-list-item-content > a {
+            background: $themecolor-alt;
+            color: $white;
+        }
+    }
+}

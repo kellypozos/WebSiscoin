@@ -1,0 +1,56 @@
+.alert-danger{
+    color: #721c24;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wave{
+    position:fixed;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.btn-google{
+    background: #dd4b39;
+    color: #fff;
+    width: 100%;
+}
+
+/* .container{
+    width: 100vw;
+    height: 78vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+.img{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.img img{
+    width: 3100%;
+   
+} */
+
+.avatar{
+    width: 30%;
+}
+
+/* .login-register-box{
+    display:flexbox;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+} */
+

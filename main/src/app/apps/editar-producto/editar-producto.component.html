@@ -1,0 +1,64 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Editar Producto</mat-card-title>
+                <form class="basic-form" [formGroup]="editarForm">
+                    <div fxLayout="row wrap">
+
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Nombre del producto" type="text"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="producto">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Cantidad" type="number" formControlName="cantidad">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Precio compra" type="number" formControlName="precio_c">
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Precio venta" type="number" formControlName="precio_v">
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Enlace de imagen" type="text" formControlName="imagePath">
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="descripcion" type="text" formControlName="descripcion">
+                            </mat-form-field>
+                        </div>
+                        <!--
+                              <div fxFlex.gt-sm="100" fxFlex="100">
+                            <h5>Foto del producto</h5>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <input class="form-control b-b" placeholder="Foto del producto" type="file">
+                        </div> -->
+
+
+                        <div fxFlex.gt-sm="30" fxFlex="30">
+                            <button mat-raised-button color="primary" type="submit" (click)="postForm(editarForm.value)"
+                                [routerLink]="['../../productos']">Editar
+                                producto</button>
+                        </div>
+                        <div fxFlex.gt-sm="30" fxFlex="30" class="text-right">
+                            <button mat-raised-button color="secondary" type="submit" [routerLink]="['../../productos']" class="text-right">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

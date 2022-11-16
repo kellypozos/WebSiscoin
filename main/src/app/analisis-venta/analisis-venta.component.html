@@ -1,0 +1,61 @@
+<!-- ============================================================== -->
+<!-- Card Grid-->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+    <div fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <div fxLayout="row wrap" class="align-items-center">
+                    <div fxFlex.gt-md="25" fxFlex.gt-lg="25" fxFlex="100">
+                        <mat-card-title>Análisis de ventas </mat-card-title>
+                    </div>
+                    <div fxFlex.gt-md="75" class="text-right">
+
+                        <a class="pointer" (click)="generatePDF()" style="color: #3a69a7;" matTooltip="Ver análisis">
+                            <img class="icon" src="assets/images/pdf-icon.png">
+                        </a>
+
+                        <a class="pointer" (click)="downloadPDF()" style="color: rgb(192, 58, 34)"
+                            matTooltip="Descargar análisis">
+
+                            <img class="pdf" src="assets/images/pdf-download.png">
+                        </a>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+
+                <!-- ============================================================== -->
+                <!-- column -->
+                <!-- ============================================================== -->
+                <form class="basic-form">
+                    <div fxLayout="row wrap">
+                        <form action="../../form-result.php" method="post" target="_blank">
+
+
+                            <canvas baseChart height="100" [datasets]="lineChartData" [labels]="lineChartLabels"
+                                [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                                [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)">
+                            </canvas>
+                            <p>
+                                De
+                                acuerdo con el análisis que se muestra
+                                en la gráfica se recomienda que para el próximo
+                                mes hagas...
+                            </p>
+
+
+                        </form>
+
+                    </div>
+                </form>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

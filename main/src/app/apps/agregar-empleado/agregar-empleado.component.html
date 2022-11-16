@@ -1,0 +1,84 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Agregar Empleado</mat-card-title>
+                <form [formGroup]="empleado">
+                    <div fxLayout="row wrap">
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Nombre empleado" type="text"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" autocomplete="off"
+                                    formControlName="">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('nombre')">Nombre requerido</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Apellido paterno" type="text" autocomplete="off"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="apellido_p">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('apellido_p')">Apellido paterno
+                                requerido</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Apellido materno" type="text" autocomplete="off"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="apellido_m">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('apellido_m')">Apellido materno
+                                requerido</span>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Teléfono" type="tel" onkeyUp="return ValNumero(this);"
+                                    maxlength="10" size="20" autocomplete="off" formControlName="telefono">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('telefono')">Teléfono
+                                requerido</span>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Correo electrónico " type="email" autocomplete="off"
+                                    formControlName="correo">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('correo')">Correo electrónico
+                                requerido</span>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Sueldo" type="number" onkeyUp="return ValNumero(this);"
+                                    maxlength="10" size="20" autocomplete="off" formControlName="sueldo">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('sueldo')">Sueldo
+                                requerido</span>
+                        </div>
+                        <!-- <div fxFlex.gt-sm="100" fxFlex="100">
+                            <h5>Foto del producto</h5>
+                        </div> -->
+                        <!-- <div fxFlex.gt-sm="100" fxFlex="100">
+                            <input class="form-control b-b" placeholder="Foto del producto" type="text"
+                                formControlName="imagePath">
+                        </div> -->
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="ID Empresa" type="number" autocomplete="off"
+                                    formControlName="id_empresa">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('id_empresa')">ID Empresa
+                                requerido</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <button mat-raised-button color="primary" type="submit" (click)="insertData()"
+                                [routerLink]="['../employeelist']">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

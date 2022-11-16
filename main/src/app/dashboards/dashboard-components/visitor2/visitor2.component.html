@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-content>
+        <mat-card-title>Enfermedades</mat-card-title>
+        <mat-card-subtitle>Enfermedades que trato</mat-card-subtitle>
+        <div id="visitor-chart" style="width: 200px;" class="d-flex flex-column justify-content-center m-auto">
+            <apx-chart [series]="VisitorChartOptions.series" [chart]="VisitorChartOptions.chart"
+                [labels]="VisitorChartOptions.labels" [responsive]="VisitorChartOptions.responsive"
+                [tooltip]="VisitorChartOptions.tooltip" [legend]="VisitorChartOptions.legend"
+                [colors]="VisitorChartOptions.colors" [dataLabels]="VisitorChartOptions.dataLabels"
+                [plotOptions]="VisitorChartOptions.plotOptions" [stroke]="VisitorChartOptions.stroke">
+            </apx-chart>
+        </div>
+    </mat-card-content>
+    <hr>
+    <mat-card-content>
+        <ul class="list-inline text-center">
+            <li>
+                <h6 class="text-muted text-success m-0">
+                    <i class="fa fa-circle font-10 m-r-10 "></i>Diabetes
+                </h6>
+            </li>
+            <li>
+                <h6 class="text-muted  text-info  m-0">
+                    <i class="fa fa-circle font-10 m-r-10"></i>Hipertensión
+                </h6>
+            </li>
+
+        </ul>
+    </mat-card-content>
+</mat-card>

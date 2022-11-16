@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "smartcommerce-9a879": {
+      "hosting": {
+        "project": [
+          "smartcommerce-9a879"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-content>
+        <mat-card-title>Tendencias</mat-card-title>
+        <mat-card-subtitle>Producto que más se venderá de su inventario </mat-card-subtitle>
+
+        <div id="newsletter-chart" class="d-flex flex-column">
+            <!--   <apx-chart [series]="newsletterchartOptions.series" [chart]="newsletterchartOptions.chart"
+                [xaxis]="newsletterchartOptions.xaxis" [stroke]="newsletterchartOptions.stroke"
+                [tooltip]="newsletterchartOptions.tooltip" [dataLabels]="newsletterchartOptions.dataLabels"
+                [legend]="newsletterchartOptions.legend" [colors]="newsletterchartOptions.colors"
+                [markers]="newsletterchartOptions.markers">
+            </apx-chart> -->
+
+            <div class="chart">
+                <canvas baseChart *ngIf='barChartData && barChartData.length > 0' [datasets]="barChartData"
+                    [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+                    [chartType]="barChartType">
+                </canvas>
+            </div>
+        </div>
+        <!--  <ul class="list-inline text-center p-t-10">
+            <li>
+                <h6 class="text-muted text-info m-0">
+                    <i class="fa fa-circle font-10 m-r-10 "></i>Porcentaje de variación de la frecuencia cardíaca del
+                    Apple watch
+                </h6>
+            </li>
+            <li>
+                <h6 class="text-muted  text-success  m-0">
+                    <i class="fa fa-circle font-10 m-r-10"></i>Porcentaje de variación de la frecuencia cardíaca del
+                    Smartwatch Versa 2
+                </h6>
+            </li>
+        </ul> -->
+    </mat-card-content>
+</mat-card>

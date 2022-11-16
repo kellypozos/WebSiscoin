@@ -1,0 +1,51 @@
+<mat-card class="oh text-center little-profile">
+    <img mat-card-image src="assets/images/background/wave.png" class="profile-bg-height" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <div class="pro-img">
+            <img src="assets/images/users/avatar.svg" width="100" alt="user">
+        </div>
+        <h3 class="m-b-0"> {{User}} </h3>
+        <!-- <h6 class="m-t-0 ">@angyy09</h6> --> 
+
+        <div >
+            <!-- <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                <h3 class="m-0 font-light">Teléfono</h3>
+                <small>2722255789</small>
+            </div> -->
+            <div >
+                <h3 class="text-center">Correo electrónico</h3>
+                <small> {{Correo}} </small>
+            </div>
+            <!-- <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                <h3 class="m-0 font-light">Empleados</h3>
+                <small>2</small>
+            </div> -->
+
+
+        </div>
+        <!-- <div fxLayout="row" fxLayoutWrap="wrap" class="m-t-30">
+            <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                <img src="assets/images/fb.png" width="60">
+                <small>Angy Dominic</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                <img src="assets/images/twt.png" width="60">
+                <small>@angyy09</small>
+            </div>
+            <div fxFlex.gt-sm="33.33%" fxFlex.gt-xs="33.33%" fxFlex="100">
+                <img src="assets/images/ig.png" width="60">
+                <small>@angyy09</small>
+            </div>
+
+        </div> -->
+        <div fxLayout="row" fxLayoutWrap="wrap" class="m-t-30">
+            <mat-card-actions>
+                <!-- <button mat-raised-button color="primary" [routerLink]="['../editar-perfil']"
+                    class="btn">Editar</button> -->
+                <!-- <a (click)="openDialog('Actualizar',element)" class="m-r-10 cursor-pointer"><i
+                        class="fa fa-pencil"></i></a> -->
+
+            </mat-card-actions>
+        </div>
+    </mat-card-content>
+</mat-card>

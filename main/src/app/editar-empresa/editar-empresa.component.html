@@ -1,0 +1,63 @@
+<!-- ============================================================== -->
+<!-- row -->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Agregar Producto</mat-card-title>
+            </mat-card-content>
+            <mat-tab-group class="demo-tab-group">
+                <mat-tab label="Datos">
+                    <div class="demo-tab-content">
+                        <div fxLayout="row wrap">
+                            <h6 style="color: primary">Datos producto</h6>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Nombre del producto</mat-label>
+                                    <input matInput placeholder="Ejemplo: Blusas">
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Cantidad</mat-label>
+                                    <input matInput placeholder="Ejemplo: 15">
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Precio compra</mat-label>
+                                    <input matInput placeholder="Ejemplo: $150">
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Precio Venta</mat-label>
+                                    <input matInput placeholder="Ejemplo: $200">
+                                </mat-form-field>
+                            </div>
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <h5>Foto del producto</h5>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <input class="form-control b-b" placeholder="Foto del producto" type="file">
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <button mat-raised-button [routerLink]="['../productos']" color="primary">Agregar
+                                    Producto</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card>
+    </div>
+</div>

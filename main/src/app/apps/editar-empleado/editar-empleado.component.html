@@ -1,0 +1,66 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Editar Empleado</mat-card-title>
+                <form class="basic-form" [formGroup]="editarForm">
+                    <div fxLayout="row wrap">
+
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Nombre del empleado" type="text"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="nombre">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Apellido Paterno" type="text"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="apellido_p">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Apellido Materno" type="text"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="apellido_m">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Telefono" type="tel" onkeyUp="return ValNumero(this);"
+                                    maxlength="10" size="20" formControlName="telefono">
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Correo" type="email" formControlName="correo">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Sueldo" type="number" formControlName="sueldo">
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="ID Empresa" type="number" formControlName="id_empresa">
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+
+                            <button mat-raised-button color="primary" type="submit" (click)="postForm(editarForm.value)"
+                                [routerLink]="['../../employeelist']">Editar
+                                empleado</button>
+                        </div>
+
+
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

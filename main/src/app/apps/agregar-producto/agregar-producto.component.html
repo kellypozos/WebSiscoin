@@ -1,0 +1,163 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Agregar Producto</mat-card-title>
+                <form [formGroup]="producto">
+                    <div fxLayout="row wrap">
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Nombre del producto" type="text"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" formControlName="producto"
+                                    autocomplete="off" onkeyUp="return ValNumero(this);"minlength="5" size="20">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('producto')">Producto
+                                requerido</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Cantidad" type="number"formControlName="cantidad"
+                                autocomplete="off" min="1">
+                                <!-- <input matInput placeholder="Cantidad" type="number"formControlName="cantidad"
+                                autocomplete="off"> -->
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('cantidad')">Cantidad
+                                requerida</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Precio compra" type="number" formControlName="precio_c"
+                                autocomplete="off" onkeyUp="return ValNumero(this);" min="10">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('precio_c')">Precio de compra
+                                requerido</span>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Precio venta" type="number" autocomplete="off"
+                                    formControlName="precio_v" min="10">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('precio_v')">Precio de venta
+                                requerido</span>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field >
+                                <input matInput placeholder="Enlace de imagen" type="text" formControlName="imagePath"
+                                autocomplete="off" onkeyUp="return ValNumero(this);"minlength="17" size="20">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('imagePath')" >Enlace de imagen
+                                requerido</span>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                               <!--  <input matInput placeholder="Descripción" type="text" autocomplete="off"
+                                    formControlName="descripcion"> -->
+                                    <input matInput placeholder="Descripción" type="text" autocomplete="off"
+                                    formControlName="descripcion" onkeydown="return /[a-z,0-9 ]/i.test(event.key)">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('descripcion')">Descripción requerida</span>
+                        </div>
+                        <!-- <div fxFlex.gt-sm="100" fxFlex="100">
+                            <h5>Foto del producto</h5>
+                        </div> -->
+                        <!-- <div fxFlex.gt-sm="100" fxFlex="100">
+                            <input class="form-control b-b" placeholder="Foto del producto" type="text"
+                                formControlName="imagePath">
+                        </div> -->
+                        <div fxFlex.gt-sm="30" fxFlex="30">
+                            <button mat-raised-button color="primary" type="submit" (click)="insertData()"
+                                [routerLink]="['../productos']" [disabled]="!producto.valid">Agregar</button>   
+                        </div>
+                        <div fxFlex.gt-sm="30" fxFlex="30" class="text-right">
+                            <button mat-raised-button color="secondary" type="submit" [routerLink]="['../productos']"
+                                class="text-right" >Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Agregar Producto</mat-card-title>
+                <form [formGroup]="producto">
+                    <div fxLayout="row wrap">
+                        <div fxFlex.gt-md="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Nombre del producto" type="text"
+                                    onkeydown="return /[a-z, ]/i.test(event.key)" autocomplete="off"
+                                    formControlName="producto">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('producto')">Producto
+                                requerido</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Cantidad" type="number" autocomplete="off"
+                                    formControlName="cantidad">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('cantidad')">Cantidad
+                                requerida</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Precio compra" type="number" autocomplete="off"
+                                    formControlName="precio_c">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('precio_c')">Precio de compra
+                                requerido</span>
+                        </div>
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="Precio venta" type="number" autocomplete="off"
+                                    formControlName="precio_v">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('precio_v')">Precio de venta
+                                requerido</span>
+                        </div>
+                             <div fxFlex.gt-sm="100" fxFlex="100">
+                            <h5>Foto del producto</h5>
+                        </div> -->
+<!-- <div fxFlex.gt-sm="100" fxFlex="100">
+                            <input class="form-control b-b" placeholder="Foto del producto" type="text"
+                                formControlName="imagePath">
+                        </div> 
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <mat-form-field>
+                                <input matInput placeholder="ID Empresa" type="number" autocomplete="off"
+                                    formControlName="id_empresa">
+                            </mat-form-field>
+                            <span class="form-text text-danger" *ngIf="campoNoValido('id_empresa')">ID Empresa
+                                requerido</span>
+                        </div>
+
+                        <div fxFlex.gt-sm="100" fxFlex="100">
+                            <button mat-raised-button color="primary" type="submit" (click)="insertData()"
+                                [routerLink]="['../productos']">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div> -->

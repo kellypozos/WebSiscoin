@@ -1,0 +1,72 @@
+<!-- ============================================================== -->
+<!-- row -->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+    <!-- Card column -->
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Editar Perfil</mat-card-title>
+            </mat-card-content>
+            <mat-tab-group class="demo-tab-group">
+                <mat-tab label="Datos">
+                    <div class="demo-tab-content">
+                        <!-- <div fxLayout="row wrap"> -->
+                            <h6 style="color: primary">Información básica</h6>
+                            
+                            <form class="basic-form" [formGroup]="editarForm">
+
+                                <div fxFlex.gt-md="100" fxFlex="100">
+                                    <mat-form-field>
+                                        <input matInput placeholder="ID" type="number" formControlName="id_usuario">
+                                    </mat-form-field>
+                                </div>
+
+                                <div fxFlex.gt-sm="100" fxFlex="100">
+                                    <mat-form-field>
+                                        <!-- <mat-label>Nombre del usuario</mat-label> -->
+                                        <input matInput placeholder="Nombre del usuario" type="text" formControlName="usuario">
+                                    </mat-form-field>
+                                </div>
+    
+                                <div fxFlex.gt-sm="100" fxFlex="100">
+                                    <mat-form-field>
+                                        <!-- <mat-label>Correo electrónico</mat-label> -->
+                                        <input matInput placeholder="Correo" type="email" formControlName="correo">
+                                    </mat-form-field>
+                                </div>
+
+                                <div fxFlex.gt-sm="100" fxFlex="100">
+                                    <button mat-raised-button color="primary" type="submit" (click)="postForm(editarForm.value)"
+                                        [routerLink]="['../perfil']" >Editar Perfil</button>
+                                </div>
+
+                            </form>
+
+                            
+
+                            <!-- <div fxFlex.gt-sm="100" fxFlex="100">
+                                <mat-form-field>
+                                    <mat-label>Teléfono</mat-label>
+                                    <input matInput type="number">
+                                </mat-form-field>
+                            </div>
+
+
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <h5>Foto de perfil</h5>
+                            </div>
+
+                            <div fxFlex.gt-sm="100" fxFlex="100">
+                                <input class="form-control b-b" placeholder="Foto" type="file">
+                            </div> -->
+
+
+                        <!-- </div> -->
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card class="oh">
+
+            <mat-card-content>
+
+                <h5><b>Ventas</b></h5>
+                <div class="table-responsive-sm">
+                    <table id="productos" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Método de Pago</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio</th>
+                                <th>Total a pagar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let variableVenta of listVentas">
+                                <td>
+                                    <div class="d-flex">
+                                        <img src="{{ variableVenta.imagePath }}" width="120px" height="120px">
+                                        <div class="m-l-15">
+                                            <p class="font-medium m-b-0 m-t-0">
+                                                {{ variableVenta.producto}}
+
+                                            </p>
+                                            <small class="text-muted">
+                                                {{variableVenta.descripcion}}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td matColumnDef="fecha">
+                                    <div class="d-flex">
+                                        <div class="m-l-15">
+                                            <p class="font-medium m-b-0 m-t-0">
+                                                {{ variableVenta.fecha }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td matColumnDef="metodopago">
+                                    <div class="d-flex">
+                                        <div class="m-l-15">
+                                            <p class="font-medium m-b-0 m-t-0">
+                                                {{ variableVenta.metodopago }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td matColumnDef="num_visitas">
+                                    <div class="d-flex">
+                                        <div class="m-l-15">
+                                            <p class="font-medium m-b-0 m-t-0">
+                                                {{ variableVenta.num_visitas }}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td matColumnDef="pagototal">
+                                    <div class="d-flex">
+                                        <div class="m-l-15">
+                                            <p class="font-medium m-b-0 m-t-0">
+                                                {{ variableVenta.pagototal | currency }}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td matColumnDef="ganancia">
+                                    <div class="d-flex">
+                                        <div class="m-l-15">
+                                            <p class="font-medium m-b-0 m-t-0">
+                                                {{ variableVenta.pagototal * variableVenta.num_visitas | currency }}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="4"></td>
+                                <td colspan="1"><b>Total:</b> </td>
+                              <td mat-cell *matCellDef="let transaction"> {{transaction.ganancia | currency}}  </td>
+                              <td colspan="1"><b> {{ getTotalCost2() | currency }} </b> </td> 
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+
+    </div>
+</div>
